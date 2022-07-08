@@ -12,8 +12,13 @@ mc.listen("onLeft", function (pl) {
 	return true;
 });
 
-mc.listen("onChat", function (pl, msg) {
+mc.listen("onChat", function (pl,msg) {
 	var chat = ' <'+pl.name+'> '+msg;
 	colorLog('blue', chat);
 	return true;
 });
+
+mc.listen("onPlayerCmd", function(pl,cmd) {
+	var chat = ' <'+pl.name+'> '+cmd;
+	colorLog('yellow', chat);
+	return true;
